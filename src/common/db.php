@@ -1,10 +1,10 @@
 <?php
-$host = '127.0.0.1';
-$port = '3306';
-$db = 'school_lab';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+$host = getenv('DB_HOST') !== false ? getenv('DB_HOST') : '127.0.0.1';
+$port = getenv('DB_PORT') !== false ? getenv('DB_PORT') : '3306';
+$db = getenv('DB_NAME') !== false ? getenv('DB_NAME') : 'school_lab';
+$user = getenv('DB_USER') !== false ? getenv('DB_USER') : 'root';
+$pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
+$charset = getenv('DB_CHARSET') !== false ? getenv('DB_CHARSET') : 'utf8mb4';
 
 $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
 
